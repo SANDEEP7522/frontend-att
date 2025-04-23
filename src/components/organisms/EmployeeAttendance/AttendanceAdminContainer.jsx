@@ -1,6 +1,6 @@
 // AttendanceContainer.jsx
-import { useGetAllAttendance } from "@/hooks/apis/atteandace/useGetAllAttendance";
-import { useGetAtteandance } from "@/hooks/apis/atteandace/useGetAtteandance";
+import { useGetAllAttendance } from "@/hooks/apis/atteandaces/useGetAllAttendance";
+import { useGetAtteandance } from "@/hooks/apis/atteandaces/useGetAtteandance";
 import { useState } from "react";
 import { AttendancesAdminCard } from "./AttendancesAdminCard";
 

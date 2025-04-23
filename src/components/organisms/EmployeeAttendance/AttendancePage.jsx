@@ -1,5 +1,5 @@
-import { useCheckInAttendance } from "@/hooks/apis/atteandace/useCheckInAttendance";
-import { useCheckOutAttendance } from "@/hooks/apis/atteandace/useCheckOutAttendance";
+import { useCheckInAttendance } from "@/hooks/apis/atteandaces/useCheckInAttendance";
+import { useCheckOutAttendance } from "@/hooks/apis/atteandaces/useCheckOutAttendance";
 import { useGetEmploy } from "@/hooks/apis/employ/useGetEmploy";
 import { useState } from "react";
 import { AttendanceCard } from "./AttendanceCard";

@@ -1,4 +1,4 @@
-import { checkOutEmployee } from "@/apis/atteendance";
+import { checkOutEmployee } from "@/apis/reports";
 import { useAuth } from "@/hooks/context/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";

@@ -1,10 +1,10 @@
 
 import { Navbar } from "@/components/atoms/Navebar/Navebar";
 import { AttendancePage } from "@/components/organisms/EmployeeAttendance/AttendancePage";
-import { useCheckInAttendance } from "@/hooks/apis/atteandace/useCheckInAttendance";
-import { useCheckOutAttendance } from "@/hooks/apis/atteandace/useCheckOutAttendance";
-import { useGetAllAttendance } from "@/hooks/apis/atteandace/useGetAllAttendance";
-import { useGetAtteandance } from "@/hooks/apis/atteandace/useGetAtteandance";
+import { useCheckInAttendance } from "@/hooks/apis/atteandaces/useCheckInAttendance";
+import { useCheckOutAttendance } from "@/hooks/apis/atteandaces/useCheckOutAttendance";
+import { useGetAllAttendance } from "@/hooks/apis/atteandaces/useGetAllAttendance";
+import { useGetAtteandance } from "@/hooks/apis/atteandaces/useGetAtteandance";
 import { useGetEmploy } from "@/hooks/apis/employ/useGetEmploy";
 import { useEffect } from "react";
 

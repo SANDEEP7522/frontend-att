@@ -1,4 +1,4 @@
-import { getAllAttendance } from "@/apis/atteendance";
+import { getAllAttendance } from "@/apis/reports";
 import { useAuth } from "@/hooks/context/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
