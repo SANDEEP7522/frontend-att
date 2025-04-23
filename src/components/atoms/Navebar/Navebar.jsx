@@ -30,7 +30,7 @@ export const Navbar = () => {
             to="/"
             className="text-3xl font-bold text-black hover:text-600 tracking-wide"
           >
-            Attendance Management
+            A*M
           </Link>
 
           {/* Desktop Menu */}
@@ -89,24 +89,24 @@ export const Navbar = () => {
 
                   <Link to="/auth/employees">
                     <Button
-                      variant="ghost"
-                      className="hover:text-blue-600 cursor-pointer text-sm"
+                      variant="none"
+                      className="hover:text-blue-600 text-white cursor-pointer text-sm"
                     >
                       Employee
                     </Button>
                   </Link>
                   <Link to="/report">
                     <Button
-                      variant="ghost"
-                      className="hover:text-blue-600 cursor-pointer text-sm"
+                      variant="none"
+                      className="hover:text-blue-600 text-white cursor-pointer text-sm"
                     >
                       Report
                     </Button>
                   </Link>
                   <Link to="/attendance">
                     <Button
-                      variant="ghost"
-                      className="hover:text-blue-600 cursor-pointer text-sm"
+                      variant="none"
+                      className="hover:text-blue-600 text-white cursor-pointer text-sm"
                     >
                       Attendance
                     </Button>

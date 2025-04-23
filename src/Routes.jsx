@@ -10,6 +10,7 @@ import { ProtectedRoute } from "./components/molecules/ProtectedRoute/ProtectedR
 import { Home } from "./pages/Home/Home";
 import { Employees } from "./pages/Employees/Employees";
 import { EmployCreate } from "./components/organisms/Employ/EmployContainer";
+import { AttendanceContainer } from "./components/organisms/EmployeeAttendance/AttendanceAdminContainer";
 
 export const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const AppRoutes = () => {
         <Route path="/auth/reset/:token" element={<Auth><ResetPasswordCard /></Auth>} />
         <Route path="/auth/employees" element={<ProtectedRoute><Auth><Employees /></Auth></ProtectedRoute>} />
         <Route path="/edit-employee" element={<ProtectedRoute><Auth><EmployCreate /> </Auth></ProtectedRoute>} />
+        <Route path="/report" element={<ProtectedRoute><Auth><AttendanceContainer/> </Auth></ProtectedRoute>} />
   
   
         <Route path="/*" element={<NotFound />} />

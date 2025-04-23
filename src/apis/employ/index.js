@@ -41,7 +41,7 @@ export const getEmploy = async ({ token }) => {
         "x-access-token": token,
       },
     });
-    console.log("Response fetched for getEmploy ", response);
+    // console.log("Response fetched for getEmploy ", response);
     return response?.data?.data;
   } catch (error) {
     console.log("Error occured in getEmploy", error);

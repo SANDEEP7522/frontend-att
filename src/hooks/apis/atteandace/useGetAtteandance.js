@@ -3,21 +3,26 @@ import { useAuth } from "@/hooks/context/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
 
-export const useGetAtteandance = (employee) => {
+export const useGetAtteandance = (employeeId) => {
   const { auth } = useAuth();
   const { toast } = useToast();
 
+  // console.log("Hook called with employeeId:", employeeId);
+
   const { data, error, isLoading } = useQuery({
-    queryKey: ["attendance", employee],
+    queryKey: ["attendance", employeeId],
     queryFn: async () => {
       if (!auth?.token) {
-        throw new Error("User not authenticated");
+        throw new Error(" User not authenticated");
       }
-      return await getEmployeeAttendance({ employee, token: auth.token });
+
+      const response = await getEmployeeAttendance(employeeId);
+      // console.log(" Got response in useQuery:", response);
+      return response;
     },
-    enabled: !!employee, // Avoid query when employee is null
+    enabled: !!employeeId,
     onError: (err) => {
-      console.error("Error fetching attendance:", err);
+      console.error(" Error fetching attendance:", err);
       toast({
         title: "Error",
         message: "Failed to fetch attendance. Please try again.",
