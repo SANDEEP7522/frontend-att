@@ -9,6 +9,7 @@ import { NotFound } from "./pages/NotFound/NoteFound";
 import { ProtectedRoute } from "./components/molecules/ProtectedRoute/ProtectedRoute";
 import { Home } from "./pages/Home/Home";
 import { Employees } from "./pages/Employees/Employees";
+import { EmployCreate } from "./components/organisms/Employ/EmployContainer";
 
 export const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ export const AppRoutes = () => {
         <Route path="/auth/forget" element={<Auth><ForgetPassword /></Auth>} />
         <Route path="/auth/reset/:token" element={<Auth><ResetPasswordCard /></Auth>} />
         <Route path="/auth/employees" element={<ProtectedRoute><Auth><Employees /></Auth></ProtectedRoute>} />
+        <Route path="/edit-employee" element={<ProtectedRoute><Auth><EmployCreate /> </Auth></ProtectedRoute>} />
   
   
         <Route path="/*" element={<NotFound />} />

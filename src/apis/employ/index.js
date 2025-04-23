@@ -48,3 +48,34 @@ export const getEmploy = async ({ token }) => {
     throw error.response.data;
   }
 };
+
+
+export const updateEmploy = async ({ id, data, token }) => {
+  try {
+    const response = await axios.put(`/employee/${id}`, data, {
+      headers: {
+        "x-access-token": token,
+      },
+    });
+    console.log("Response fetched for updateEmploy ", response);
+    return response?.data?.data;
+  } catch (error) {
+    console.log("Error occured in updateEmploy", error);
+    throw error.response.data;
+  }
+};
+
+export const deleteEmploy = async ({ id, token }) => {
+  try {
+    const response = await axios.delete(`/employee/${id}`, {
+      headers: {
+        "x-access-token": token,
+      },
+    });
+    console.log("Response fetched for deleteEmploy ", response);
+    return response?.data?.data;
+  } catch (error) {
+    console.log("Error occured in deleteEmploy", error);
+    throw error.response.data;
+  }
+};
