@@ -41,7 +41,7 @@ export const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4 ">
-            <Link to="/employees">
+            <Link to="/auth/employees">
               <Button variant="none" className="text-black text-sm hover:text-blue-500">
                 Employee
               </Button>

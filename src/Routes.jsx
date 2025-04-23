@@ -8,6 +8,7 @@ import { ResetPasswordCard } from "@/components/organisms/Auth/ResetPasswordCard
 import { NotFound } from "./pages/NotFound/NoteFound";
 import { ProtectedRoute } from "./components/molecules/ProtectedRoute/ProtectedRoute";
 import { Home } from "./pages/Home/Home";
+import { Employees } from "./pages/Employees/Employees";
 
 export const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<ProtectedRoute><Auth><Home /></Auth></ProtectedRoute>} />
         <Route path="/auth/forget" element={<Auth><ForgetPassword /></Auth>} />
         <Route path="/auth/reset/:token" element={<Auth><ResetPasswordCard /></Auth>} />
+        <Route path="/auth/employees" element={<Auth><Employees /></Auth>} />
   
   
         <Route path="/*" element={<NotFound />} />
