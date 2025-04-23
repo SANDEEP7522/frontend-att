@@ -6,9 +6,10 @@ export const createEmploy = async ({
   department,
   email,
   phone,
-  token
+  token,
 }) => {
   try {
+    console.log("createEmploy", name, designation, department, email, phone);
     const response = await axios.post(
       "/employee",
       {
@@ -20,12 +21,12 @@ export const createEmploy = async ({
       },
       {
         headers: {
-          'x-access-token': token
+          "x-access-token": token,
         },
       }
     );
     console.log("createEmploy", response);
-    
+
     return response?.data;
   } catch (error) {
     console.log("createEmploy", error);
@@ -33,15 +34,15 @@ export const createEmploy = async ({
   }
 };
 
-export const getEmploy = async ({token}) => {
+export const getEmploy = async ({ token }) => {
   try {
-    const response = await axios.get('/employees', {
+    const response = await axios.get("/employees", {
       headers: {
-        'x-access-token': token
+        "x-access-token": token,
       },
     });
     console.log("Response fetched for getEmploy ", response);
-    return response?.data;
+    return response?.data?.data;
   } catch (error) {
     console.log("Error occured in getEmploy", error);
     throw error.response.data;

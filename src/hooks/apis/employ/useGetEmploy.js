@@ -1,4 +1,5 @@
 import { getEmploy } from "@/apis/employ";
+import { useAuth } from "@/hooks/context/useAuth";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetEmploy = () => {
@@ -10,7 +11,7 @@ export const useGetEmploy = () => {
     data: employees,
   } = useQuery({
     queryFn: () => getEmploy({ token: auth?.token }),
-    queryKey: "employ",
+    queryKey: ["employees"],
     staleTime: 3000,
   });
   return {

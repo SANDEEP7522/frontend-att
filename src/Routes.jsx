@@ -19,7 +19,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<ProtectedRoute><Auth><Home /></Auth></ProtectedRoute>} />
         <Route path="/auth/forget" element={<Auth><ForgetPassword /></Auth>} />
         <Route path="/auth/reset/:token" element={<Auth><ResetPasswordCard /></Auth>} />
-        <Route path="/auth/employees" element={<Auth><Employees /></Auth>} />
+        <Route path="/auth/employees" element={<ProtectedRoute><Auth><Employees /></Auth></ProtectedRoute>} />
   
   
         <Route path="/*" element={<NotFound />} />
