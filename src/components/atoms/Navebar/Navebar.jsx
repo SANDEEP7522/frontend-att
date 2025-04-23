@@ -8,12 +8,6 @@ import {
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { UserButton } from "../UserButton/UserButton";
 import {
   Card,
@@ -93,7 +87,7 @@ export const Navbar = () => {
                     </Card>
                   </Link>
 
-                  <Link to="/employees">
+                  <Link to="/auth/employees">
                     <Button
                       variant="ghost"
                       className="hover:text-blue-600 cursor-pointer text-sm"

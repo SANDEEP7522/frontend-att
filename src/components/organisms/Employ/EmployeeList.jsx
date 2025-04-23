@@ -28,7 +28,7 @@ const EmployeeList = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {employees?.map((emp) => (
           <Card key={emp._id}>
-            <CardContent className="p-4 space-y-2 bg-gray-400">
+            <CardContent className="p-4 space-y-2 bg-gray-400 glass-card">
               <h3 className="text-xl font-semibold">{emp.name}</h3>
               <p className="text-gray-600">
                 <b>Email:</b> {emp.email}
