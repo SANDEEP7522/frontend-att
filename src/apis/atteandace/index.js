@@ -12,3 +12,18 @@ export const fetchAttendanceReport = async ({ month, year }) => {
     throw error; // Re-throw to let React Query handle it
   }
 };
+
+
+export const fetchAbsenteesReport = async (date) => {
+  try {
+    console.log(`Fetching absentees for date: ${date}`);
+    const response = await axios.get(
+      `/reports/absentees?date=${date}`
+    );
+    console.log("Absentees API Response:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching absentees report:", error);
+    throw error;
+  }
+};

@@ -1,14 +1,31 @@
+import { fetchAbsenteesReport } from "@/apis/atteandace";
+import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import { useAuth } from "@/hooks/context/useAuth";
 
 export const useAbsenteesReport = (date) => {
+  const { auth } = useAuth();
+  const { toast } = useToast();
+  console.log(`useAbsenteesReport hook called with date: ${date}`);
+
   return useQuery({
-    queryKey: ["absentees", date],
-    queryFn: async () => {
-      if (!date) throw new Error("Date is required");
-      const res = await axios.get(`/reports/absentees?date=${date}`);
-      return res.data;
+    queryKey: ["absentees-report", date],
+    queryFn: () => fetchAbsenteesReport(date),
+    enabled: !!date && !!auth?.token, // Only run when date and auth token are available
+    onError: () => {
+      toast({
+        title: "Error",
+        message: "Failed to fetch absentees report.",
+        type: "error",
+        variant: "destructive",
+      });
     },
-    enabled: !!date, // query only runs if date is truthy
+    onSuccess: () => {
+      toast({
+        title: "Success",
+        message: "Absentees report fetched successfully.",
+        type: "success",
+      });
+    },
   });
 };
