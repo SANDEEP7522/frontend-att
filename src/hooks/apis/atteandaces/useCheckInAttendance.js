@@ -1,17 +1,12 @@
+// src/hooks/apis/attendance/useCheckInEmployee.js
 import { checkInEmployee } from "@/apis/reports";
-import { useAuth } from "@/hooks/context/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 
-export const useCheckInAttendance = () => {
-  const { auth } = useAuth();
+export const useCheckInEmployee = () => {
   const { toast } = useToast();
-
-  const { mutate, isLoading, error } = useMutation({
-    mutationFn: async (employeeId) => {
-      if (!auth?.token) throw new Error("User not authenticated");
-      return await checkInEmployee({ employee: employeeId, token: auth.token });
-    },
+  return useMutation({
+    mutationFn: (employeeId) => checkInEmployee(employeeId),
     onSuccess: () => {
       toast({
         title: "Success",
@@ -19,16 +14,12 @@ export const useCheckInAttendance = () => {
         type: "success",
       });
     },
-    onError: (err) => {
+    onError: (error) => {
       toast({
         title: "Error",
-        message: "Failed to check-in. Try again.",
+        message: error.message,
         type: "error",
-        variant: "destructive",
       });
-      console.error(err);
     },
   });
-
-  return { checkIn: mutate, isLoading, error };
 };

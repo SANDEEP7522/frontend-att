@@ -16,10 +16,11 @@ import Reports from "./pages/Reports/Reports";
 export const AppRoutes = () => {
   return (
   <Routes>
+    
         <Route path="/auth/signup" element={<Auth> <SignupContainer /> </Auth>} />
         <Route path="/auth/code" element={<Auth><CodeContainer />  </Auth>} />
         <Route path="/auth/signin" element={<Auth> <SigninContainer /> </Auth>} />
-        <Route path="/" element={<ProtectedRoute><Auth><Home /></Auth></ProtectedRoute>} />
+        <Route path="/" element={<Auth><Home /></Auth>} />
         <Route path="/auth/forget" element={<Auth><ForgetPassword /></Auth>} />
         <Route path="/auth/reset/:token" element={<Auth><ResetPasswordCard /></Auth>} />
         <Route path="/auth/employees" element={<ProtectedRoute><Auth><Employees /></Auth></ProtectedRoute>} />

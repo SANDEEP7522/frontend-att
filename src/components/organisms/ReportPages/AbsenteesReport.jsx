@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const AbsenteesReport = () => {
+const AbsenteesReport = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const dateString = selectedDate.toISOString().split("T")[0]; // Format as YYYY-MM-DD
 
@@ -82,3 +82,4 @@ export const AbsenteesReport = () => {
   );
 };
 
+export default AbsenteesReport;
