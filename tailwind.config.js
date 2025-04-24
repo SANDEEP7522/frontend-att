@@ -13,7 +13,7 @@ export default {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
 			  slack:{
-				DEFAULT: '#5c3858',
+				DEFAULT: '#d1d5db',
 				slacks: '###d1d5db',		
 			}, 
 			glassi: {

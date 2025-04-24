@@ -2,14 +2,14 @@
 export const AttendancesAdminCard = ({ attendance }) => {
   if (!attendance) {
     return (
-      <div className="border p-4 rounded-md shadow-md bg-red-100 text-red-700">
+      <div className="border p-4 rounded-md shadow-md text-red-700">
         <p>No attendance data available.</p>
       </div>
     );
   }
 
   return (
-    <div className="border p-4 rounded-md shadow-md m-4">
+    <div className="border p-4 rounded-md shadow-md m-4 bg-slack">
       <h2 className="text-lg font-semibold mb-2">
         {attendance?.employee?.name || "Unknown Employee"}
       </h2>

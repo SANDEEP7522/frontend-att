@@ -15,9 +15,9 @@ export const AttendanceContainer = ({ employeeId }) => {
   const employeeAttendance = Array.isArray(employeeData?.data) ? employeeData.data : [];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+    <div className="w-screen grid grid-cols-2 md:grid-cols-2 gap-6 p-4 bg-slack">
       <div>
-        <h2 className="text-xl font-bold mb-3">All Attendance</h2>
+        <h2 className="grid grid-cols-2 md:grid-cols-2 gap-6 text-xl font-bold mb-3">All Attendance</h2>
         {allAttendance.length > 0 ? (
           allAttendance.map((entry) => (
             <AttendancesAdminCard key={entry._id} attendance={entry} />
@@ -28,13 +28,13 @@ export const AttendanceContainer = ({ employeeId }) => {
       </div>
 
       <div>
-        <h2 className="text-xl font-bold mb-3">Employee Attendance</h2>
+        <h2 className="text-xl font-bold mb-3 bg-slack">Employee Attendance</h2>
         {employeeAttendance.length > 0 ? (
           employeeAttendance.map((entry) => (
             <AttendancesAdminCard key={entry._id} attendance={entry} />
           ))
         ) : (
-          <p>No records for this employee.</p>
+          <p>No records for this employee. After 30 Days</p>
         )}
       </div>
     </div>
