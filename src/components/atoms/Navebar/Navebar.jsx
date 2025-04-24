@@ -45,9 +45,9 @@ export const Navbar = () => {
                 Report
               </Button>
             </Link>
-            <Link to="/attendance">
+            <Link to="/auth/present-absent">
               <Button variant="none" className="text-black text-sm hover:text-blue-500">
-                Attendance
+                AttendanceReport
               </Button>
             </Link>
             <UserButton />
@@ -103,12 +103,12 @@ export const Navbar = () => {
                       Report
                     </Button>
                   </Link>
-                  <Link to="/attendance">
+                  <Link to="/auth/present-absent">
                     <Button
                       variant="none"
                       className="hover:text-blue-600 text-white cursor-pointer text-sm"
                     >
-                      Attendance
+                      AttendanceReport
                     </Button>
                   </Link>
                 </div>

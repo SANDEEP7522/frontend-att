@@ -11,6 +11,7 @@ import { Home } from "./pages/Home/Home";
 import { Employees } from "./pages/Employees/Employees";
 import { EmployCreate } from "./components/organisms/Employ/EmployContainer";
 import { AttendanceContainer } from "./components/organisms/EmployeeAttendance/AttendanceAdminContainer";
+import Reports from "./pages/Reports/Reports";
 
 export const AppRoutes = () => {
   return (
@@ -24,6 +25,7 @@ export const AppRoutes = () => {
         <Route path="/auth/employees" element={<ProtectedRoute><Auth><Employees /></Auth></ProtectedRoute>} />
         <Route path="/edit-employee" element={<ProtectedRoute><Auth><EmployCreate /> </Auth></ProtectedRoute>} />
         <Route path="/report" element={<ProtectedRoute><Auth><AttendanceContainer/> </Auth></ProtectedRoute>} />
+        <Route path="/auth/present-absent" element={<ProtectedRoute><Auth><Reports/> </Auth></ProtectedRoute>} />
   
   
         <Route path="/*" element={<NotFound />} />
