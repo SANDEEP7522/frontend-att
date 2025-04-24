@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TriangleAlert, Loader2 } from "lucide-react";
 import { FaCheck } from "react-icons/fa";
+import { Label } from "@/components/ui/label";
 
 export const EmployCard = ({
   error,
@@ -22,7 +23,7 @@ export const EmployCard = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Card className="rounded-2xl shadow-xl border bg-gray-500">
+        <Card className="rounded-2xl shadow-xl border bg-gray-300">
           <CardHeader className="space-y-4">
             <CardTitle className="text-xl font-bold text-center text-slate-800">
               Create Employee
@@ -56,7 +57,7 @@ export const EmployCard = ({
           <form onSubmit={onSignupHandleSubmit}>
             <CardContent className="space-y-4">
               <Input
-                placeholder="Name"
+                placeholder="full name"
                 name="name"
                 value={createForm.name}
                 onChange={handleChange}
