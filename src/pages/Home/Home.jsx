@@ -13,7 +13,7 @@ export const Home = () => {
         </h1>
         <p className="text-base sm:text-lg mt-3 text-center sm:text-left text-red-600 font-medium">
           If you <strong>check out</strong>, then you are able to{" "}
-          <strong>check in</strong> after 24 hours.
+          <strong>check in</strong> after 8 hours.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <EmployeeCheckIn />
